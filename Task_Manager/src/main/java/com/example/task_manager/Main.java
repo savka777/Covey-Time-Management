@@ -13,6 +13,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException, IOException {
+        //initializes the user interface using an FXML file named main.fxml
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/com/example/task_manager/main.fxml"));
         Parent root = loader.load();

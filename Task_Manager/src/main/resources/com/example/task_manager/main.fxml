@@ -1,33 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.task_manager.MainController">
+<AnchorPane prefHeight="1000.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.task_manager.MainController">
     <children>
-        <VBox layoutX="14.0" layoutY="14.0" prefHeight="570.0" prefWidth="772.0" spacing="10.0">
+        <StackPane layoutX="14.0" layoutY="14.0" prefHeight="242.0" prefWidth="772.0">
             <children>
-                <Label text="Covey Quadrants Task Manager" />
-                <Label text="Enter Task:" />
-                <TextField fx:id="taskInput" />
-                <Label text="Importance (1-5):" />
-                <TextField fx:id="importanceInput" />
-                <Label text="Urgency (1-5):" />
-                <TextField fx:id="urgencyInput" />
-                <Button mnemonicParsing="false" onAction="#addTask" text="Add Task" />
-                <Label text="Quadrant I: Important and Urgent" />
-                <ListView fx:id="quadrant1ListView" prefHeight="100.0" prefWidth="200.0" />
-                <Label text="Quadrant II: Important and Not Urgent" />
-                <ListView fx:id="quadrant2ListView" prefHeight="100.0" prefWidth="200.0" />
-                <Label text="Quadrant III: Not Important and Urgent" />
-                <ListView fx:id="quadrant3ListView" prefHeight="100.0" prefWidth="200.0" />
-                <Label text="Quadrant IV: Not Important and Not Urgent" />
-                <ListView fx:id="quadrant4ListView" prefHeight="100.0" prefWidth="200.0" />
+                <VBox spacing="10.0">
+                    <children>
+                       <!-- <Label text="Covey Quadrants Task Manager" />-->
+                        <Label text="Enter Task:" />
+                        <TextField fx:id="taskInput" />
+                        <Label text="Importance (1-5):" />
+                        <HBox spacing="10.0">
+
+
+                            <CheckBox fx:id="importance1" text="1" />
+                            <CheckBox fx:id="importance2" text="2" />
+                            <CheckBox fx:id="importance3" text="3" />
+                            <CheckBox fx:id="importance4" text="4" />
+                        </HBox>
+                        <Label text="Urgency (1-5):" />
+                        <HBox spacing="10.0">
+                            <CheckBox fx:id="urgency1" text="1" />
+                            <CheckBox fx:id="urgency2" text="2" />
+                            <CheckBox fx:id="urgency3" text="3" />
+                            <CheckBox fx:id="urgency4" text="4" />
+                        </HBox>
+                        <Button mnemonicParsing="false" onAction="#addTask" text="Add Task" />
+                    </children>
+                </VBox>
             </children>
-        </VBox>
+        </StackPane>
+
+        <GridPane layoutX="14.0" layoutY="270.0" prefHeight="380.0" prefWidth="772.0" vgap="10.0" hgap="10.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" percentHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" percentHeight="50.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <GridPane.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </GridPane.margin>
+            <children>
+                <VBox prefHeight="200.0" prefWidth="100.0">
+                    <children>
+                        <Label text="Quadrant I: Important and Urgent" />
+                        <ListView fx:id="quadrant1ListView" prefHeight="200.0" prefWidth="200.0" />
+                    </children>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                    <children>
+                        <Label text="Quadrant II: Important and Not Urgent" />
+                        <ListView fx:id="quadrant2ListView" prefHeight="200.0" prefWidth="200.0" />
+                    </children>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                    <children>
+                        <Label text="Quadrant III: Not Important and Urgent" />
+                        <ListView fx:id="quadrant3ListView" prefHeight="200.0" prefWidth="200.0" />
+                    </children>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <children>
+                        <Label text="Quadrant IV: Not Important and Not Urgent" />
+                        <ListView fx:id="quadrant4ListView" prefHeight="200.0" prefWidth="200.0" />
+                    </children>
+                </VBox>
+            </children>
+        </GridPane>
     </children>
 </AnchorPane>
+
