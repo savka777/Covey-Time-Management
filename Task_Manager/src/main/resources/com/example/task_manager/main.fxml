@@ -39,7 +39,13 @@
                             <CheckBox fx:id="urgency3" text="3" />
                             <CheckBox fx:id="urgency4" text="4" />
                         </HBox>
-                        <Button mnemonicParsing="false" onAction="#addTask" text="Add Task" />
+
+                        <HBox spacing="10.0">
+                            <Button mnemonicParsing="false" onAction="#removeTask" text="Remove Task" />
+                            <Button fx:id="viewCompletedTasksButton" mnemonicParsing="false" onAction="#viewCompletedTasks" text="View Completed Tasks" />
+                            <Button mnemonicParsing="false" onAction="#addTask" text="Add Task" />
+                        </HBox>
+
                     </children>
                 </VBox>
             </children>

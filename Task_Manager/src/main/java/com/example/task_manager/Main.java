@@ -4,8 +4,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.application.Application;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -19,7 +17,7 @@ public class Main extends Application {
         Parent root = loader.load();
 
         Scene scene = new Scene(root, 800, 600);
-
+        scene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
         primaryStage.setTitle("Covey Quadrants Task Manager");
         primaryStage.setScene(scene);
         primaryStage.show();

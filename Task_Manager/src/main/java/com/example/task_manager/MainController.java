@@ -1,4 +1,16 @@
 package com.example.task_manager;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -29,6 +41,51 @@ public class MainController {
 
     @FXML
     private CheckBox urgency1, urgency2, urgency3, urgency4;
+    private ObservableList<String> completedTasks = FXCollections.observableArrayList();
+
+    @FXML
+    private Button viewCompletedTasksButton;
+    @FXML
+    void viewCompletedTasks(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("CompletedTasks.fxml"));
+            Parent root = loader.load();
+
+            CompletedTasksController controller = loader.getController();
+            controller.setCompletedTasks(completedTasks);
+
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setTitle("Completed Tasks");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @FXML
+    void removeTask(ActionEvent event) {
+        if (quadrant1ListView.getSelectionModel().getSelectedIndex() != -1) {
+            String taskToRemove = quadrant1ListView.getSelectionModel().getSelectedItem();
+            quadrant1ListView.getItems().remove(quadrant1ListView.getSelectionModel().getSelectedIndex());
+            completedTasks.add(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")) + " - " + taskToRemove);
+        } else if (quadrant2ListView.getSelectionModel().getSelectedIndex() != -1) {
+            String taskToRemove = quadrant2ListView.getSelectionModel().getSelectedItem();
+            quadrant2ListView.getItems().remove(quadrant2ListView.getSelectionModel().getSelectedIndex());
+            completedTasks.add(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")) + " - " + taskToRemove);
+        } else if (quadrant3ListView.getSelectionModel().getSelectedIndex() != -1) {
+            String taskToRemove = quadrant3ListView.getSelectionModel().getSelectedItem();
+            quadrant3ListView.getItems().remove(quadrant3ListView.getSelectionModel().getSelectedIndex());
+            completedTasks.add(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")) + " - " + taskToRemove);
+        } else if (quadrant4ListView.getSelectionModel().getSelectedIndex() != -1) {
+            String taskToRemove = quadrant4ListView.getSelectionModel().getSelectedItem();
+            quadrant4ListView.getItems().remove(quadrant4ListView.getSelectionModel().getSelectedIndex());
+            completedTasks.add(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")) + " - " + taskToRemove);
+        }
+    }
+
 
     @FXML
     void addTask(ActionEvent event) {
@@ -55,6 +112,9 @@ public class MainController {
         } else {
             quadrant4ListView.getItems().add(task);
         }
+
+
+
 
         taskInput.clear();
         importance1.setSelected(false);
