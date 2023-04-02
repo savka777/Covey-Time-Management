@@ -2,8 +2,8 @@
 .root {
     -fx-font-family: "Segue UI";
     -fx-font-size: 14px;
-    -fx-base: #27AE60
-
+    -fx-background: #333333;
+    -fx-text-base-color: #cccccc;
 }
 
 /* Button styling */
@@ -20,13 +20,31 @@
 
 /* Label styling */
 .label {
-    -fx-text-fill: #333333;
-    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+/* ListView styling */
+/*.list-view {
+    -fx-background-color: #ffd60a;
+    -fx-border-color: #ffc300;
+    -fx-border-width: 1px;
+}*/
+
+.list-view {
+    -fx-border-width: 1px;
 }
 
-/* ListView styling */
-.list-view {
-    -fx-background-color: white;
-    -fx-border-color: #CCCCCC;
-    -fx-border-width: 1px;
+.quadrant1 {
+    -fx-background-color: #c9c9c9;
+}
+
+.quadrant2 {
+    -fx-background-color: #c9c9c9;
+}
+
+.quadrant3 {
+ -fx-background-color: #c9c9c9;
+}
+
+.quadrant4 {
+-fx-background-color: #c9c9c9;
 }

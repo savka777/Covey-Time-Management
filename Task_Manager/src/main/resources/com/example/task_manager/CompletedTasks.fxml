@@ -6,11 +6,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.task_manager.CompletedTasksController">
+<AnchorPane prefHeight="509.0" prefWidth="292.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.task_manager.CompletedTasksController">
     <children>
-        <VBox layoutX="20.0" layoutY="20.0" spacing="10.0">
+        <VBox alignment="TOP_CENTER" layoutX="20.0" layoutY="20.0" spacing="10.0">
             <children>
-                <Label text="Completed Tasks of the Week" />
+                <Label text="Completed Tasks of the Week" textAlignment="CENTER" />
                 <ListView fx:id="completedTasksListView" />
                 <Button mnemonicParsing="false" onAction="#closeWindow" text="Close" />
             </children>

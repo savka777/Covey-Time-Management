@@ -16,7 +16,7 @@ public class Main extends Application {
         loader.setLocation(getClass().getResource("/com/example/task_manager/main.fxml"));
         Parent root = loader.load();
 
-        Scene scene = new Scene(root, 800, 600);
+        Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
         primaryStage.setTitle("Covey Quadrants Task Manager");
         primaryStage.setScene(scene);

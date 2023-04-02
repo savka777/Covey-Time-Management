@@ -16,8 +16,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.ListView;
+import javafx.scene.control.Tooltip;
+
 
 public class MainController {
 
@@ -45,6 +47,7 @@ public class MainController {
 
     @FXML
     private Button viewCompletedTasksButton;
+
     @FXML
     void viewCompletedTasks(ActionEvent event) {
         try {
@@ -57,13 +60,14 @@ public class MainController {
             Stage stage = new Stage();
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.setTitle("Completed Tasks");
-            stage.setScene(new Scene(root));
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
+            stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
 
     @FXML
     void removeTask(ActionEvent event) {
@@ -112,9 +116,6 @@ public class MainController {
         } else {
             quadrant4ListView.getItems().add(task);
         }
-
-
-
 
         taskInput.clear();
         importance1.setSelected(false);

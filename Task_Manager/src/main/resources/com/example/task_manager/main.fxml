@@ -2,56 +2,150 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1000.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.task_manager.MainController">
+<AnchorPane prefHeight="715.0" prefWidth="821.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.task_manager.MainController">
     <children>
         <StackPane layoutX="14.0" layoutY="14.0" prefHeight="242.0" prefWidth="772.0">
             <children>
-                <VBox spacing="10.0">
+                <ImageView fitHeight="130.0" fitWidth="736.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../COVEY_logo.png" />
+                    </image>
+                    <effect>
+                        <Reflection />
+                    </effect>
+                </ImageView>
+                <VBox alignment="TOP_CENTER" prefHeight="232.0" prefWidth="772.0" spacing="10.0">
                     <children>
-                       <!-- <Label text="Covey Quadrants Task Manager" />-->
-                        <Label text="Enter Task:" />
-                        <TextField fx:id="taskInput" />
+                        <TextField fx:id="taskInput" alignment="CENTER" prefWidth="740.0" promptText="Enter Task">
+                     <effect>
+                        <DropShadow height="58.43" radius="19.3575">
+                           <color>
+                              <Color red="0.3607843220233917" green="0.41960784792900085" blue="0.7529411911964417" />
+                           </color>
+                        </DropShadow>
+                     </effect></TextField>
                         <Label text="Importance (1-5):" />
-                        <HBox spacing="10.0">
-
-
-                            <CheckBox fx:id="importance1" text="1" />
-                            <CheckBox fx:id="importance2" text="2" />
-                            <CheckBox fx:id="importance3" text="3" />
-                            <CheckBox fx:id="importance4" text="4" />
+                        <HBox alignment="TOP_CENTER" prefHeight="26.0" prefWidth="600.0" spacing="10.0">
+      
+                                       
+                                                    <CheckBox fx:id="importance1" text="1">
+                        <effect>
+                           <DropShadow>
+                              <color>
+                                 <Color red="0.3607843220233917" green="0.41960784792900085" blue="0.7529411911964417" />
+                              </color>
+                           </DropShadow>
+                        </effect></CheckBox>
+                            <CheckBox fx:id="importance2" text="2">
+                        <effect>
+                           <DropShadow>
+                              <color>
+                                 <Color red="0.3607843220233917" green="0.41960784792900085" blue="0.7529411911964417" />
+                              </color>
+                           </DropShadow>
+                        </effect></CheckBox>
+                            <CheckBox fx:id="importance3" text="3">
+                        <effect>
+                           <DropShadow>
+                              <color>
+                                 <Color red="0.3607843220233917" green="0.41960784792900085" blue="0.7529411911964417" />
+                              </color>
+                           </DropShadow>
+                        </effect></CheckBox>
+                            <CheckBox fx:id="importance4" text="4">
+                        <effect>
+                           <DropShadow>
+                              <color>
+                                 <Color red="0.3607843220233917" green="0.41960784792900085" blue="0.7529411911964417" />
+                              </color>
+                           </DropShadow>
+                        </effect></CheckBox>
                         </HBox>
                         <Label text="Urgency (1-5):" />
-                        <HBox spacing="10.0">
-                            <CheckBox fx:id="urgency1" text="1" />
-                            <CheckBox fx:id="urgency2" text="2" />
-                            <CheckBox fx:id="urgency3" text="3" />
-                            <CheckBox fx:id="urgency4" text="4" />
+                        <HBox alignment="TOP_CENTER" prefHeight="18.0" prefWidth="438.0" spacing="10.0">
+                            <CheckBox fx:id="urgency1" text="1">
+                        <effect>
+                           <DropShadow>
+                              <color>
+                                 <Color red="0.3607843220233917" green="0.41960784792900085" blue="0.7529411911964417" />
+                              </color>
+                           </DropShadow>
+                        </effect>
+                     </CheckBox>
+                            <CheckBox fx:id="urgency2" text="2">
+                        <effect>
+                           <DropShadow>
+                              <color>
+                                 <Color red="0.3607843220233917" green="0.41960784792900085" blue="0.7529411911964417" />
+                              </color>
+                           </DropShadow>
+                        </effect>
+                     </CheckBox>
+                            <CheckBox fx:id="urgency3" text="3">
+                        <effect>
+                           <DropShadow>
+                              <color>
+                                 <Color red="0.3607843220233917" green="0.41960784792900085" blue="0.7529411911964417" />
+                              </color>
+                           </DropShadow>
+                        </effect>
+                     </CheckBox>
+                            <CheckBox fx:id="urgency4" text="4">
+                        <effect>
+                           <DropShadow>
+                              <color>
+                                 <Color red="0.3607843220233917" green="0.41960784792900085" blue="0.7529411911964417" />
+                              </color>
+                           </DropShadow>
+                        </effect>
+                     </CheckBox>
                         </HBox>
-
-                        <HBox spacing="10.0">
-                            <Button mnemonicParsing="false" onAction="#removeTask" text="Remove Task" />
-                            <Button fx:id="viewCompletedTasksButton" mnemonicParsing="false" onAction="#viewCompletedTasks" text="View Completed Tasks" />
-                            <Button mnemonicParsing="false" onAction="#addTask" text="Add Task" />
-                        </HBox>
-
-                    </children>
+      
+                                                         <HBox spacing="10.0" />
+                         <Button mnemonicParsing="false" onAction="#addTask" text="Add Task">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color red="0.3607843220233917" green="0.41960784792900085" blue="0.7529411911964417" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Button>
+                         <Button mnemonicParsing="false" onAction="#removeTask" text="Remove Task" textAlignment="CENTER">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color red="0.3607843220233917" green="0.41960784792900085" blue="0.7529411911964417" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Button>
+      
+                                            </children>
                 </VBox>
             </children>
         </StackPane>
 
-        <GridPane layoutX="14.0" layoutY="270.0" prefHeight="380.0" prefWidth="772.0" vgap="10.0" hgap="10.0">
+        <GridPane hgap="10.0" layoutX="14.0" layoutY="270.0" prefHeight="380.0" prefWidth="772.0" vgap="10.0">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" />
@@ -64,32 +158,95 @@
                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
             </GridPane.margin>
             <children>
-                <VBox prefHeight="200.0" prefWidth="100.0">
+                <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
                     <children>
-                        <Label text="Quadrant I: Important and Urgent" />
-                        <ListView fx:id="quadrant1ListView" prefHeight="200.0" prefWidth="200.0" />
+                        <Label text="Important and Urgent I" textFill="RED">
+                            <Label style="-fx-text-fill: gray; -fx-font-style: italic;" text="Click 'Add Task' to add tasks here" />
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="3.0" />
+                     </padding>
+                  </Label>
+                        <ListView fx:id="quadrant1ListView" prefHeight="200.0" prefWidth="200.0" styleClass="quadrant1">
+                     <effect>
+                        <DropShadow height="15.0" radius="7.0" spread="0.73" width="15.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <tooltip>
+                        <Tooltip text="This is the most important tasks you should focus on and do them ASAP" />
+                     </tooltip>
+                  </ListView>
                     </children>
                 </VBox>
-                <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
                     <children>
-                        <Label text="Quadrant II: Important and Not Urgent" />
-                        <ListView fx:id="quadrant2ListView" prefHeight="200.0" prefWidth="200.0" />
+                        <Label text="Important and NOT Urgent II">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="3.0" />
+                     </padding></Label>
+                        <ListView fx:id="quadrant2ListView" prefHeight="200.0" prefWidth="200.0" styleClass="quadrant2">
+                     <effect>
+                        <DropShadow height="15.0" radius="7.0" spread="0.73" width="15.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </ListView>
                     </children>
                 </VBox>
-                <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
                     <children>
-                        <Label text="Quadrant III: Not Important and Urgent" />
-                        <ListView fx:id="quadrant3ListView" prefHeight="200.0" prefWidth="200.0" />
+                        <Label text="NOT Important and Urgent III">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="3.0" />
+                     </padding></Label>
+                        <ListView fx:id="quadrant3ListView" prefHeight="200.0" prefWidth="200.0" styleClass="quadrant3">
+                     <effect>
+                        <DropShadow height="15.0" radius="7.0" spread="0.73" width="15.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </DropShadow>
+                     </effect></ListView>
                     </children>
                 </VBox>
-                <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                     <children>
-                        <Label text="Quadrant IV: Not Important and Not Urgent" />
-                        <ListView fx:id="quadrant4ListView" prefHeight="200.0" prefWidth="200.0" />
+                        <Label text="NOT Important and NOT Urgent IV" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="3.0" />
+                     </padding></Label>
+                        <ListView fx:id="quadrant4ListView" prefHeight="200.0" prefWidth="200.0" styleClass="quadrant4">
+                     <effect>
+                        <DropShadow height="15.0" radius="7.0" spread="0.73" width="15.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </DropShadow>
+                     </effect></ListView>
                     </children>
                 </VBox>
             </children>
         </GridPane>
+             <Button fx:id="viewCompletedTasksButton" layoutX="688.0" layoutY="659.0" mnemonicParsing="false" onAction="#viewCompletedTasks" text="Completed Tasks" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>
-
